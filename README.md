@@ -1,5 +1,4 @@
-# react-getting-started
-Introduction and getting started on React
+# Introduction and getting started on React #
 
 This is a simple react learning project.
 
