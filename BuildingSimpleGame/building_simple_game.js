@@ -2,13 +2,16 @@
 
 // possibleCombinationSum
 // bit.ly/s-pcs
+
 var possibleCombinationSum = function(arr, n) {
+
   if (arr.indexOf(n) >= 0) { return true; }
   if (arr[0] > n) { return false; }
   if (arr[arr.length - 1] > n) {
     arr.pop();
     return possibleCombinationSum(arr, n);
   }
+
   var listSize = arr.length, combinationsCount = (1 << listSize)
   for (var i = 1; i < combinationsCount ; i++ ) {
     var combinationSum = 0;
@@ -43,11 +46,13 @@ const Button = (props) => {
   	<div className="col-2 text-center">
       {button}
       <br /><br />
-      <button className="btn btn-warning btn-sm"
-        onClick={props.redraw}
-        disabled={props.numberOfRedraws === 0} >
+      <button
+	      	className="btn btn-warning btn-sm"
+	        onClick={props.redraw}
+	        disabled={props.numberOfRedraws === 0} >
         <i className="fa fa-refresh"></i>
-        {props.numberOfRedraws}</button>
+        {props.numberOfRedraws}
+       </button>
     </div>
   );
 };
@@ -78,8 +83,12 @@ const Numbers = (props) => {
     <div className="card text-center">
       <div>
         {Numbers.list.map((number, i) =>
-        	<span key={i} className={numberClassName(number)}
-            onClick={() => props.selectNumber(number)}>{number}</span>	
+        	<span
+        			key={i}
+	        		className={numberClassName(number)}
+	            onClick={() => props.selectNumber(number)}>
+            {number}
+           </span>	
         )}
       </div>
     </div>
